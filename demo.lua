@@ -20,7 +20,10 @@ function redraw()
     screen.display_image(hairs_top, 0, -20 - position[1] * 0.3)  
   end
   
+  screen.save()
+  screen.scale(0.5, 0.5)
   screen.display_image_region(mistral, digit * digit_width, 0, digit_width, digit_height, position[1], position[2])
+  screen.restore()
   
   if show_fg then
     screen.blend_mode('xor')
@@ -63,7 +66,7 @@ function key(n, z)
 end
 
 function init()
-  mistral = screen.load_png(paths.this.path .. "mistral-digits.png")
+  mistral = screen.load_png(paths.this.pat .. "mistral-digits.png")
   print("image name: ", mistral:name())
   print("image size: ", mistral:extents())
   digit_width, digit_height = mistral:extents()
