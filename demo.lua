@@ -66,15 +66,15 @@ function key(n, z)
 end
 
 function init()
-  mistral = screen.load_png(paths.this.pat .. "mistral-digits.png")
+  mistral = screen.load_png(paths.this.path .. "lib/image/mistral-digits.png")
   print("image name: ", mistral:name())
   print("image size: ", mistral:extents())
   digit_width, digit_height = mistral:extents()
   digit_width = digit_width / 10.0
 
-  hairs_a = screen.load_png(paths.this.path .. "hairs-only-positive.png")
-  hairs_b = screen.load_png(paths.this.path .. "hairs-only-dim.png")
-  hairs_top = screen.load_png(paths.this.path .. "hairs-top-darker.png")
+  hairs_a = screen.load_png(paths.this.path .. "lib/image/hairs-only-positive.png")
+  hairs_b = screen.load_png(paths.this.path .. "lib/image/hairs-only-dim.png")
+  hairs_top = screen.load_png(paths.this.path .. "lib/image/hairs-top-darker.png")
     
   redraw_clock = clock.run(function()
     local interval = 1/15
